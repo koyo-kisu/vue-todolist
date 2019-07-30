@@ -51,7 +51,7 @@ export default {
     deleteItem: function (id) {
       if (id) {
         db.collection("items").doc(id).delete().then(function() {
-          console.log('Document successfully deleted')
+        console.log('Document successfully deleted')
         }).catch(function(error) {
           this.error = error
         })
