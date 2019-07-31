@@ -1,12 +1,11 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="@/assets/logo.png" id="vue-logo">
-    <div class="title">What do I need to do today?</div>
-    <input v-model="myTodo" /><button @click="addToDo">Add</button>
+    <div class="title">やることは何？</div>
+    <input v-model="myTodo" />今日のやること<button @click="addToDo">Add</button>
     <div v-if="errors !== ''" id="errors">{{ errors }}</div>
 
     <div v-if="this.$store.getters.getItems && this.$store.getters.getItems.length > 0">
-      <div class="title">Today, you've go to do...</div>
+      <div class="title"></div>
  
      <div v-for="item in this.$store.getters.getItems" :key="item.id">
        {{ item.title }}<br /><br /><small style="text-decoration:underline;" @click="deleteItem(item.id)">Delete</small>
@@ -45,7 +44,7 @@ export default {
           this.errors = error
         })
       } else {
-        this.errors = 'Please enter some text'
+        this.errors = '何か文字を記入してください'
       }
     },
     deleteItem: function (id) {
@@ -69,12 +68,13 @@ export default {
 }
 
 body, html, #app {
-  background:#8ac8e5;
+  background:#E0F8F7;
 }
 
 .home {
   width:300px;
   margin:auto;
+  margin-top: 200px;
 }
 
 #vue-logo {

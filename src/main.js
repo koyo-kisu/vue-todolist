@@ -17,18 +17,11 @@ import firebase from 'firebase'
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
-Vue.config.productionTip = false
-
-const config = {
-  apiKey: '',
-  authDomain: '',
-  databaseURL: '',
-  projectId: '',
-  storageBucket: '',
-  messagingSenderId: ''
+  if (!firebase.apps.length) {
+    firebase.initializeApp({});
 }
 
-firebase.initializeApp(config)
+Vue.config.productionTip = false
 
 export const db = firebase.firestore()
 
