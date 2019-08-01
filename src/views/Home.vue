@@ -1,14 +1,14 @@
 <template>
   <div class="home">
-    <div class="title">やることは何？</div>
-    <input v-model="myTodo" />今日のやること<button @click="addToDo">Add</button>
+    <div class="title">何をしますか？</div>
+    <input v-model="myTodo" />今日のやること<button @click="addToDo">追加</button>
     <div v-if="errors !== ''" id="errors">{{ errors }}</div>
 
     <div v-if="this.$store.getters.getItems && this.$store.getters.getItems.length > 0">
       <div class="title"></div>
  
      <div v-for="item in this.$store.getters.getItems" :key="item.id">
-       {{ item.title }}<br /><br /><small style="text-decoration:underline;" @click="deleteItem(item.id)">Delete</small>
+       {{ item.title }}<br /><br /><small style="text-decoration:underline;" @click="deleteItem(item.id)">削除</small>
        <hr />
      </div>
    </div>
