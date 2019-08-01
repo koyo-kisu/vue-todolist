@@ -8,7 +8,7 @@
       <div class="title"></div>
  
      <div v-for="item in this.$store.getters.getItems" :key="item.id">
-       {{ item.title }}<br /><br /><small style="text-decoration:underline;" @click="deleteItem(item.id)">削除</small>
+       {{ item.title }}<br /><br /><small style="text-decoration:underline;" @click="deleteItem(item.id)" class="del">削除</small>
        <hr />
      </div>
    </div>
@@ -113,5 +113,9 @@ button {
   background:#a52222;
   color:#fff;
   padding:5px;
+}
+
+.del {
+  cursor: pointer;
 }
 </style>
